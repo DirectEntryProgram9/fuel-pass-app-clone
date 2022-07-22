@@ -1,0 +1,9 @@
+#btnRegister:hover {
+    -fx-background-color: #EBC813 !important;
+}
+#btnRegister {
+    -fx-background-color: #FFDC2E !important;
+    -fx-border-color: black;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
