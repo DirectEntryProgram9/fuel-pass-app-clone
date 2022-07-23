@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -12,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -41,6 +43,11 @@ public class RegisterFormController {
 
     public void initialize() {
         Platform.runLater(txtNIC::requestFocus);
+        FadeTransition fd = new FadeTransition(Duration.millis(1000),pneRegisterForm);
+        fd.setFromValue(0);
+        fd.setToValue(1);
+        fd.playFromStart();
+
         btnRegister.setDisable(true);
         txtNIC.textProperty().addListener(new ChangeListener<String>() {
             @Override

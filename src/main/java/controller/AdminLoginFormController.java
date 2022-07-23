@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,6 +26,11 @@ public class AdminLoginFormController {
     public AnchorPane pneAdminLoginForm;
 
     public void initialize() {
+        FadeTransition fd = new FadeTransition(Duration.millis(1000),pneAdminLoginForm);
+        fd.setFromValue(0);
+        fd.setToValue(1);
+        fd.playFromStart();
+
         Platform.runLater(txtPassword::requestFocus);
     }
 

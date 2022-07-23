@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<AnchorPane prefHeight="490.0" prefWidth="684.0" style="-fx-background-color: white;" stylesheets="@../css/home-form.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeFormController">
+<AnchorPane fx:id="pneHomeForm" prefHeight="490.0" prefWidth="684.0" style="-fx-background-color: white;" stylesheets="@../css/home-form.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeFormController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#imgLogo_OnMouseClicked" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0">
          <image>
