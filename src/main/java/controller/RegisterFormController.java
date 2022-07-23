@@ -58,7 +58,7 @@ public class RegisterFormController {
                         setDisableCmp(false);
                     }
                     else {
-                        lblNICStatus.setText("Invalid NIC ❎");
+                        lblNICStatus.setText("Invalid NIC ❌");
                         lblNICStatus.setTextFill(Color.RED);
                     }
                 }

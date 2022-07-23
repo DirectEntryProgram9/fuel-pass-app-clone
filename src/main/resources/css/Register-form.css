@@ -1,9 +1,15 @@
+#lblLogin {
+    -fx-text-fill: #4934FF !important;
+}
+#lblLogin:hover {
+    -fx-text-fill: #2212B3 !important;
+}
 #btnRegister:hover {
-    -fx-background-color: #EBC813 !important;
+    -fx-background-color: #2212B3 !important;
 }
 #btnRegister {
-    -fx-background-color: #FFDC2E !important;
-    -fx-border-color: black;
+    -fx-background-color: #4934FF !important;
     -fx-background-radius: 5px;
     -fx-border-radius: 5px;
+    -fx-text-fill: white;
 }

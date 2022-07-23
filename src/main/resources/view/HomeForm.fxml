@@ -29,7 +29,7 @@
          </children>
       </AnchorPane>
       <AnchorPane fx:id="pneContainer" layoutY="81.0" prefHeight="383.0" prefWidth="684.0" style="-fx-background-color: #f0f0f0;" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0" />
-      <FlowPane alignment="CENTER" hgap="10.0" layoutX="250.0" layoutY="466.0" prefHeight="23.0" prefWidth="684.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <FlowPane alignment="CENTER" hgap="10.0" layoutX="250.0" layoutY="466.0" prefHeight="23.0" prefWidth="684.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <ImageView fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
