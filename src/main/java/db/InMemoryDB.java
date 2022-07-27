@@ -5,8 +5,10 @@ import java.util.ArrayList;
 public class InMemoryDB {
     private static ArrayList<User> userDatabase = new ArrayList<>();
 
-    public static void registerUser(User user) {
+    public static boolean registerUser(User user) {
+        if (findUser(user.getNic()) != null) return false;
         userDatabase.add(user);
+        return true;
     }
 
     public static User findUser(String nic) {
@@ -19,12 +21,8 @@ public class InMemoryDB {
     }
 
     public static void removeUser(String nic) {
-        for (User user : userDatabase) {
-            if (user.getNic().equalsIgnoreCase(nic)) {
-                userDatabase.remove(user);
-                return;
-            }
-        }
+        User user = findUser(nic);
+        if (user != null) userDatabase.remove(user);
     }
 
     public static ArrayList<User> getUserDatabase() {

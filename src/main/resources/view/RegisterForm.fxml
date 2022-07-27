@@ -80,7 +80,7 @@
          </children>
       </TextFlow>
       <TextField fx:id="txtAddress" disable="true" layoutX="22.0" layoutY="296.0" prefHeight="26.0" prefWidth="640.0" promptText="Ex: 398/8, Colombo, Sri Lanka." AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" />
-      <Button id="btnRegister" fx:id="btnRegister" layoutX="22.0" layoutY="332.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="122.0" stylesheets="@../css/Register-form.css" text="Register">
+      <Button id="btnRegister" fx:id="btnRegister" defaultButton="true" layoutX="22.0" layoutY="332.0" mnemonicParsing="false" onAction="#btnRegister_OnAction" prefHeight="31.0" prefWidth="122.0" stylesheets="@../css/Register-form.css" text="Register">
          <font>
             <Font size="18.0" />
          </font>
