@@ -7,15 +7,25 @@ public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String address;
+    private int quota;
+
+    public int getQuota() {
+        return quota;
+    }
+
+    public void setQuota(int quota) {
+        this.quota = quota;
+    }
 
     public User() {
     }
 
-    public User(String nic, String firstName, String lastName, String address) {
-        this.setNic(nic);
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setAddress(address);
+    public User(String nic, String firstName, String lastName, String address, int quota) {
+        this.nic = nic;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.quota = quota;
     }
 
     public String getNic() {

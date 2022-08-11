@@ -1,10 +1,13 @@
 package controller;
 
+import javafx.animation.FadeTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 import util.Navigation;
 import util.Routes;
 
@@ -16,6 +19,10 @@ public class WelcomeFormController {
     public AnchorPane pneWelcome;
 
     public void initialize() {
+        FadeTransition fd = new FadeTransition(Duration.millis(1000),pneWelcome);
+        fd.setFromValue(0);
+        fd.setToValue(1);
+        fd.playFromStart();
     }
 
     public void btnRegister_OnAction(ActionEvent actionEvent) throws IOException {

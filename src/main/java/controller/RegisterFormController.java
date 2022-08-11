@@ -92,28 +92,32 @@ public class RegisterFormController {
         else if (!isName(firstName)) {
             new Alert(Alert.AlertType.ERROR,"First name is invalid, Please enter a valid first name").showAndWait();
             txtFirstName.requestFocus();
+            txtFirstName.selectAll();
             return;
         }
         else if (!isName(txtLastName.getText())) {
             new Alert(Alert.AlertType.ERROR,"Last name is invalid, Please enter a valid last name").showAndWait();
             txtLastName.requestFocus();
+            txtLastName.selectAll();
             return;
         }
         else if (txtAddress.getText().trim().length() < 3) {
             new Alert(Alert.AlertType.ERROR,"Address is invalid, Please enter a valid address").showAndWait();
             txtAddress.requestFocus();
+            txtAddress.selectAll();
             return;
         }
-        boolean result = InMemoryDB.registerUser(new User(txtNIC.getText(), txtFirstName.getText(), txtLastName.getText(), txtAddress.getText()));
+        boolean result = InMemoryDB.registerUser(new User(txtNIC.getText(), txtFirstName.getText(), txtLastName.getText(), txtAddress.getText(),16));
         if (result) new Alert(Alert.AlertType.INFORMATION,"Registration is success, You will be redirected to Login Form").showAndWait();
         else {
             new Alert(Alert.AlertType.ERROR,"NIC is already existed, Please double check your NIC").showAndWait();
             txtNIC.requestFocus();
+            txtNIC.selectAll();
             return;
         }
         lblLogin_OnMouseClicked(null);
     }
-    private boolean isName(String input) {
+    public boolean isName(String input) {
         char[] chars = input.toCharArray();
         for (char aChar : chars) {
             if (!Character.isLetter(aChar) && aChar != ' ') return false;

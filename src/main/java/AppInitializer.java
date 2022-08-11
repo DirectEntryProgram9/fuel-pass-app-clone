@@ -21,6 +21,7 @@ public class AppInitializer extends Application {
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
+        primaryStage.setResizable(false);
         primaryStage.centerOnScreen();
         primaryStage.show();
     }

@@ -3,8 +3,6 @@ package controller;
 import javafx.animation.FadeTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.image.Image;
@@ -22,7 +20,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class AdminLoginFormController {
-    private static int attemps = 3;
+    private static int attempts = 3;
     private static final String ADMIN_PASSWORD = "dep9@PUBUDU";
     public PasswordField txtPassword;
     public AnchorPane pneAdminLoginForm;
@@ -32,14 +30,13 @@ public class AdminLoginFormController {
         fd.setFromValue(0);
         fd.setToValue(1);
         fd.playFromStart();
-
         Platform.runLater(txtPassword::requestFocus);
     }
 
     public void txtPassword_OnAction(ActionEvent actionEvent) throws IOException, URISyntaxException {
         if (!txtPassword.getText().equals(ADMIN_PASSWORD)) {
-            if (attemps == 0) {
-                new Alert(Alert.AlertType.ERROR,"You have reached maximum number of attemps...").showAndWait();
+            if (attempts == 0) {
+                new Alert(Alert.AlertType.ERROR,"You have reached maximum number of attempts...").showAndWait();
                 Platform.exit();
                 return;
             }
@@ -48,8 +45,8 @@ public class AdminLoginFormController {
             MediaPlayer mediaPlayer = new MediaPlayer(media);
             mediaPlayer.play();
 
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid Admin Password. You have " + attemps + " more attemps to try again");
-            attemps -= 1;
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid Admin Password. You have " + attempts + " more attempts to try again");
+            attempts -= 1;
 
             InputStream resourceAsStream = this.getClass().getResourceAsStream("/images/padlock.png");
             Image image = new Image(resourceAsStream);

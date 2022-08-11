@@ -1,10 +1,10 @@
 #lblLogin {
     -fx-text-fill: #4934FF !important;
 }
-#lblLogin:hover {
+#lblLogin:hover, #lblLogin:focused {
     -fx-text-fill: #2212B3 !important;
 }
-#btnRegister:hover {
+#btnRegister:hover, #btnRegister:focused {
     -fx-background-color: #2212B3 !important;
 }
 #btnRegister {

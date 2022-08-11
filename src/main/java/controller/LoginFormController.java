@@ -1,5 +1,7 @@
 package controller;
 
+import com.google.zxing.WriterException;
+import com.google.zxing.qrcode.QRCodeWriter;
 import db.InMemoryDB;
 import javafx.animation.FadeTransition;
 import javafx.application.Platform;
@@ -34,13 +36,14 @@ public class LoginFormController {
         Navigation.navigate(Routes.REGISTRATION);
     }
 
-    public void btnLogin_OnAction(ActionEvent actionEvent) throws IOException {
+    public void btnLogin_OnAction(ActionEvent actionEvent) throws IOException, WriterException {
         if (!RegisterFormController.isValidNIC(txtNIC.getText()) || InMemoryDB.findUser(txtNIC.getText()) == null) {
             new Alert(Alert.AlertType.ERROR,"Please enter a valid NIC number to login !").showAndWait();
             txtNIC.selectAll();
             txtNIC.requestFocus();
             return;
         }
-        Navigation.navigate(Routes.DASHBOARD);
+        UserDashboardFormController ctrl = (UserDashboardFormController) Navigation.navigate(Routes.DASHBOARD);
+        ctrl.setData(txtNIC.getText());
     }
 }

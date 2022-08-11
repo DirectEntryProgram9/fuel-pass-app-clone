@@ -50,4 +50,10 @@ public class HomeFormController {
             pneLogin_OnMouseClicked(null);
         }
     }
+
+    public void pneHome_OnKeyReleased(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode() == KeyCode.ENTER || keyEvent.getCode() == KeyCode.SPACE) {
+            Navigation.navigate(Routes.WELCOME);
+        }
+    }
 }
